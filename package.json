@@ -1,18 +1,18 @@
 {
-  "version": "0.0.1",
+  "version": "0.0.2",
   "name": "solid-supabase",
-  "description": "{{ desc_of_lib }}",
+  "description": "A simple wrapper around Supabase.js that gives you access to the client as a Solid hook.",
   "type": "module",
   "files": [
     "dist"
   ],
-  "main": "dist/esm/solid-supabase.js",
-  "module": "dist/esm/solid-supabase.js",
-  "types": "dist/types/solid-supabase.d.ts",
+  "main": "dist/esm/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/types/index.d.ts",
   "exports": {
     ".": {
-      "solid": "./dist/source/solid-supabase.jsx",
-      "default": "./dist/esm/solid-supabase.js"
+      "solid": "./dist/source/index.jsx",
+      "default": "./dist/esm/index.js"
     }
   },
   "scripts": {
