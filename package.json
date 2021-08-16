@@ -1,5 +1,5 @@
 {
-  "version": "0.0.3",
+  "version": "0.0.4",
   "name": "solid-supabase",
   "description": "A simple wrapper around Supabase.js that gives you access to the client as a Solid hook.",
   "type": "module",
@@ -31,12 +31,13 @@
   "license": "MIT",
   "homepage": "https://github.com/wobsoriano/solid-supabase#readme",
   "peerDependencies": {
-    "solid-js": "*"
+    "solid-js": "1.x"
   },
   "devDependencies": {
-    "rollup": "^2.56.2",
+    "@supabase/supabase-js": "^1.21.2",
+    "rollup": "^2.28.2",
     "rollup-preset-solid": "^1.0.1",
-    "typescript": "^4.0.3",
-    "@supabase/supabase-js": "^1.21.2"
+    "solid-js": "^1.1.0",
+    "typescript": "^4.0.3"
   }
 }
