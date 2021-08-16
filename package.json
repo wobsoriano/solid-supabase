@@ -1,38 +1,41 @@
 {
-  "version": "0.0.0",
-  "name": "{{ name_of_lib }}",
+  "version": "0.0.1",
+  "name": "solid-supabase",
   "description": "{{ desc_of_lib }}",
   "type": "module",
   "files": [
     "dist"
   ],
-  "main": "dist/esm/{{ name_of_lib }}.js",
-  "module": "dist/esm/{{ name_of_lib }}.js",
-  "types": "dist/types/{{ name_of_lib }}.d.ts",
+  "main": "dist/esm/solid-supabase.js",
+  "module": "dist/esm/solid-supabase.js",
+  "types": "dist/types/solid-supabase.d.ts",
   "exports": {
     ".": {
-      "solid": "./dist/source/{{ name_of_lib }}.jsx",
-      "default": "./dist/esm/{{ name_of_lib }}.js"
+      "solid": "./dist/source/solid-supabase.jsx",
+      "default": "./dist/esm/solid-supabase.js"
     }
   },
   "scripts": {
     "build": "rollup -c",
-    "prepublishOnly": "pnpm build"
+    "prepublishOnly": "yarn build"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/{{ me }}/{{ name_of_lib }}.git"
+    "url": "git+https://github.com/wobsoriano/solid-supabase.git"
   },
-  "keywords": [],
-  "author": "{{ me }}",
+  "keywords": [
+    "solid",
+    "supabase"
+  ],
+  "author": "Robert Soriano",
   "license": "MIT",
-  "homepage": "https://github.com/{{ me }}/{{ name_of_lib }}#readme",
+  "homepage": "https://github.com/wobsoriano/solid-supabase#readme",
   "dependencies": {
-    "solid-js": "^0.26.5"
+    "solid-js": "^1.0.0"
   },
   "devDependencies": {
-    "rollup": "^2.28.2",
-    "rollup-preset-solid": "^0.3.0",
+    "rollup": "^2.56.2",
+    "rollup-preset-solid": "^1.0.1",
     "typescript": "^4.0.3"
   }
 }
