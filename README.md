@@ -1,6 +1,6 @@
-# {{ name_of_lib }}
+# Solid + Supabase
 
-{{ desc_of_lib }}
+A simple wrapper around Supabase.js to enable usage within Solid.
 
 ## Quick start
 
