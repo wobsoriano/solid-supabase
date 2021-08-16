@@ -6,12 +6,11 @@ A simple wrapper around Supabase.js that gives you access to the client as a Sol
 
 ```sh
 yarn add solid-supabase
-
 # or
 npm install solid-supabase
 ```
 
-Install the supabase-client:
+Install supabase client:
 
 ```sh
 yarn add @supabase/supabase-js
@@ -38,7 +37,7 @@ render(() => (
 ), document.getElementById('root'))
 ```
 
-This will make the supabase client anywhere along the component tree.
+This will make the supabase client available anywhere along the component tree.
 
 ## Use the hook
 
@@ -49,19 +48,17 @@ import { useSupabase } from 'solid-supabase'
 const App = () => {
   const supabase = useSupabase()
   
-  const [postId, setPostId] = createSignal(1)
+  const [postId] = createSignal(1)
   const [data, { refetch }] = createResource(postId, (arg) => {
-    return supabase.from('posts').select().eq('id', arg)
+    return supabase.from('posts').select('*').eq('id', arg)
   })
 
   return (
     <>
       { data.loading && <div>Loading...</div> }
       { data.error && <div>{data.error}</div> }
-      <div>
-        <pre>{JSON.stringify(data(), null, 2)}</pre>
-        <button onClick={refetch}>Refetch</button>
-      </div>
+      <pre>{JSON.stringify(data(), null, 2)}</pre>
+      <button onClick={refetch}>Refetch</button>
     </>
   )
 }
