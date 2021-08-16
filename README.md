@@ -65,3 +65,7 @@ const App = () => {
 
 export default App
 ```
+
+## License
+
+MIT License © 2021 [Robert Soriano](https://github.com/wobsoriano)
