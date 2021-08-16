@@ -1,5 +1,5 @@
 import type { SupabaseClient } from '@supabase/supabase-js'
-import { Component, createContext, useContext } from 'solid-js'
+import { Component, createContext } from 'solid-js'
 
 export const SupabaseContext = createContext<SupabaseClient>()
 
