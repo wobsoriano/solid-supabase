@@ -31,6 +31,7 @@
   "license": "MIT",
   "homepage": "https://github.com/wobsoriano/solid-supabase#readme",
   "dependencies": {
+    "@supabase/supabase-js": "^1.21.2",
     "solid-js": "^1.0.0"
   },
   "devDependencies": {
