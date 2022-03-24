@@ -1,2 +1,2 @@
-export { SupabaseProvider } from './SupabaseProvider';
-export * from './primitives';
+export { SupabaseProvider } from './SupabaseProvider'
+export * from './primitives'
