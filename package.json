@@ -1,7 +1,7 @@
 {
   "name": "solid-supabase",
   "type": "module",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "A simple wrapper around Supabase.js that gives you access to the client as a Solid hook.",
   "keywords": [
     "solid",
