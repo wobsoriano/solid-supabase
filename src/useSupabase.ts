@@ -1,12 +1,12 @@
-import { useContext } from 'solid-js'
-import { SupabaseContext } from './SupabaseProvider'
+import { useContext } from 'solid-js';
+import { SupabaseContext } from './SupabaseProvider';
 
 export const useSupabase = () => {
-    const ctx = useContext(SupabaseContext)
+  const ctx = useContext(SupabaseContext);
 
-    if (!ctx) {
-        throw new Error('useSupabase must be used within a SupabaseContext.Provider')
-    }
+  if (!ctx) {
+    throw new Error('useSupabase must be used within a SupabaseContext.Provider');
+  }
 
-    return ctx
-}
+  return ctx;
+};

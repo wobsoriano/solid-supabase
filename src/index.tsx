@@ -1,7 +1,3 @@
-export {
-    SupabaseProvider
-} from './SupabaseProvider'
+export { SupabaseProvider } from './SupabaseProvider';
 
-export {
-    useSupabase
-} from './useSupabase'
+export { useSupabase } from './useSupabase';
