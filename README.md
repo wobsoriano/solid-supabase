@@ -62,10 +62,16 @@ export default App;
 Other available primitives
 
 ```ts
-import { createSupabaseAuth, createSupabaseStorage, createOnAuthStateChange } from 'solid-supabase';
+import {
+  createSupabaseAuth,
+  createSupabaseStorage,
+  createSupabaseFrom,
+  createOnAuthStateChange,
+} from 'solid-supabase';
 
-const auth = createSupabaseAuth();
-const storage = createSupabaseStorage();
+const auth = createSupabaseAuth(); // auth.signOut()
+const storage = createSupabaseStorage(); // storage.listBuckets()
+const from = createSupabaseFrom(); // from('posts').select('*').eq('id', arg)
 
 createOnAuthStateChange((event, session) => {
   console.log(event, session);
