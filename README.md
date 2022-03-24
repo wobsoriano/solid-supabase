@@ -1,6 +1,6 @@
 # Solid + Supabase
 
-A simple wrapper around Supabase.js that gives you access to the client as a Solid primitive.
+A simple wrapper around Supabase.js to enable usage within Solid.
 
 ## Installation
 
