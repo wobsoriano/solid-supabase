@@ -62,12 +62,14 @@ export default App;
 Other available primitives
 
 ```ts
-import { createSupabaseAuth, createSupabaseStorage } from 'solid-supabase';
+import { createSupabaseAuth, createSupabaseStorage, createOnAuthStateChange } from 'solid-supabase';
 
 const auth = createSupabaseAuth();
 const storage = createSupabaseStorage();
-const { data } = await storage.listBuckets();
-await auth.signOut();
+
+createOnAuthStateChange((event, session) => {
+  console.log(event, session);
+});
 ```
 
 ## License
