@@ -4,10 +4,11 @@ specifiers:
   '@antfu/eslint-config-ts': ^0.18.9
   '@supabase/supabase-js': ^1.31.2
   bumpp: ^7.1.1
+  esbuild: ^0.14.27
+  esbuild-plugin-solid: ^0.4.2
   eslint: ^8.11.0
   solid-js: ^1.3.10
   tsup: ^5.12.1
-  tsup-plugin-solid: ^0.1.0
   typescript: 4.5.4
 
 dependencies:
@@ -17,9 +18,10 @@ dependencies:
 devDependencies:
   '@antfu/eslint-config-ts': 0.18.9_eslint@8.11.0+typescript@4.5.4
   bumpp: 7.1.1
+  esbuild: 0.14.27
+  esbuild-plugin-solid: 0.4.2_esbuild@0.14.27+solid-js@1.3.13
   eslint: 8.11.0
   tsup: 5.12.1_typescript@4.5.4
-  tsup-plugin-solid: 0.1.0_solid-js@1.3.13
   typescript: 4.5.4
 
 packages:
@@ -2917,16 +2919,6 @@ packages:
 
   /tslib/1.14.1:
     resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==}
-    dev: true
-
-  /tsup-plugin-solid/0.1.0_solid-js@1.3.13:
-    resolution: {integrity: sha512-Imn30xuFKDbyQF46ItOHXGr8JFl4OXuiwsIwy2AGD8Qcox8ARzYfeuty+5hfH1b1bg9Y3IhNoml6CTxRGdvS9g==}
-    dependencies:
-      esbuild: 0.14.27
-      esbuild-plugin-solid: 0.4.2_esbuild@0.14.27+solid-js@1.3.13
-    transitivePeerDependencies:
-      - solid-js
-      - supports-color
     dev: true
 
   /tsup/5.12.1_typescript@4.5.4:
