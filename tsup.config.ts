@@ -7,4 +7,5 @@ export default defineConfig({
   format: ['cjs', 'esm'],
   dts: true,
   esbuildPlugins: [solidPlugin()],
+  minify: true,
 })
