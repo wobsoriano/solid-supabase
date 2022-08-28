@@ -32,18 +32,17 @@
   },
   "homepage": "https://github.com/wobsoriano/solid-supabase#readme",
   "peerDependencies": {
-    "solid-js": ">=1.3.0"
-  },
-  "dependencies": {
-    "@supabase/supabase-js": "^1.35.3"
+    "@supabase/supabase-js": "*",
+    "solid-js": ">=1.4.0"
   },
   "devDependencies": {
     "@antfu/eslint-config-ts": "^0.18.9",
+    "@supabase/supabase-js": "^1.35.6",
     "bumpp": "^7.1.1",
     "esbuild": "^0.14.27",
     "esbuild-plugin-solid": "^0.4.2",
     "eslint": "^8.11.0",
-    "solid-js": "^1.4.0-beta.6",
+    "solid-js": "^1.5.1",
     "tsup": "^5.12.1",
     "typescript": "4.5.4"
   }
