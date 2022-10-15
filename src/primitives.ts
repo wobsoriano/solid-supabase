@@ -35,12 +35,13 @@ export function createOnAuthStateChange(callback: AuthChangeHandler): void {
     callback(event, session)
   })
 
-  createRenderEffect(() => {
-    if (client.auth.session())
-      callback('SIGNED_IN', client.auth.session())
+  createRenderEffect(async() => {
+    const { data } = await client.auth.getSession()
+    if (data.session)
+      callback('SIGNED_IN', data.session)
+  })
 
-    onCleanup(() => {
-      authListener?.unsubscribe()
-    })
+  onCleanup(() => {
+    authListener?.subscription?.unsubscribe()
   })
 }
