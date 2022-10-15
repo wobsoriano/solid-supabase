@@ -35,7 +35,7 @@ This will make the supabase client available anywhere along the component tree.
 ## Use the primitive
 
 ```tsx
-import { createResource, createSignal } from 'solid-js'
+import { Match, Switch, createResource, createSignal } from 'solid-js'
 import { createSupabase } from 'solid-supabase'
 
 const App = () => {
@@ -47,12 +47,18 @@ const App = () => {
   })
 
   return (
-    <>
-      {data.loading && <div>Loading...</div>}
-      {data.error && <div>{data.error}</div>}
-      <pre>{JSON.stringify(data(), null, 2)}</pre>
-      <button onClick={refetch}>Refetch</button>
-    </>
+    <Switch>
+      <Match when={data.loading}>
+        <div>Loading...</div>
+      </Match>
+      <Match when={data.error}>
+        <div>{data.error}</div>
+      </Match>
+      <Match when={data()}>
+        <pre>{JSON.stringify(data(), null, 2)}</pre>
+        <button onClick={refetch}>Refetch</button>
+      </Match>
+    </Switch>
   )
 }
 
