@@ -42,6 +42,6 @@ export function createOnAuthStateChange(callback: AuthChangeHandler): void {
   })
 
   onCleanup(() => {
-    authListener?.subscription?.unsubscribe()
+    authListener.subscription.unsubscribe()
   })
 }
