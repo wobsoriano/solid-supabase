@@ -1,5 +1,5 @@
-import type { AuthChangeEvent, Session, SupabaseClient } from '@supabase/supabase-js'
-import { createRenderEffect, onCleanup, useContext } from 'solid-js'
+import type { AuthChangeEvent, AuthSession, SupabaseClient } from '@supabase/supabase-js'
+import { createEffect, onCleanup, useContext } from 'solid-js'
 import { SupabaseContext } from './SupabaseProvider'
 
 export const createSupabase = () => {
@@ -26,7 +26,7 @@ export function createSupabaseFrom(): SupabaseClient['from'] {
   return supabase.from
 }
 
-type AuthChangeHandler = (event: AuthChangeEvent, session: Session | null) => void
+type AuthChangeHandler = (event: AuthChangeEvent, session: AuthSession | null) => void
 
 export function createOnAuthStateChange(callback: AuthChangeHandler): void {
   const client = createSupabase()
@@ -35,7 +35,7 @@ export function createOnAuthStateChange(callback: AuthChangeHandler): void {
     callback(event, session)
   })
 
-  createRenderEffect(async() => {
+  createEffect(async() => {
     const { data } = await client.auth.getSession()
     if (data.session)
       callback('SIGNED_IN', data.session)
