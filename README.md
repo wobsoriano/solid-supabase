@@ -8,6 +8,8 @@ A simple wrapper around Supabase.js to enable usage within Solid.
 npm install @supabase/supabase-js solid-supabase # or pnpm or yarn
 ```
 
+For supabase-js v1, install `solid-supabase@0.2.x` instead.
+
 ## Quick start
 
 In the root of your app, use the `SupabaseProvider` and pass the supabase client with your credentials.
