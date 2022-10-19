@@ -37,7 +37,7 @@
   },
   "devDependencies": {
     "@antfu/eslint-config-ts": "^0.18.9",
-    "@supabase/supabase-js": "^2.0.0",
+    "@supabase/supabase-js": "^2.0.2",
     "bumpp": "^7.1.1",
     "esbuild": "^0.14.27",
     "esbuild-plugin-solid": "^0.4.2",
