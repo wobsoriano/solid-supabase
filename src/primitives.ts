@@ -28,7 +28,11 @@ export function createSupabaseFrom(): SupabaseClient['from'] {
 
 type AuthChangeHandler = (event: AuthChangeEvent, session: AuthSession | null) => void
 
-export function createOnAuthStateChange(callback: AuthChangeHandler): void {
+interface CreateOnAuthStateChangeOptions {
+  autoDispose?: boolean
+}
+
+export function createOnAuthStateChange(callback: AuthChangeHandler, options: CreateOnAuthStateChangeOptions = { autoDispose: true }): void {
   const client = createSupabase()
 
   const { data: authListener } = client.auth.onAuthStateChange((event, session) => {
@@ -42,6 +46,7 @@ export function createOnAuthStateChange(callback: AuthChangeHandler): void {
   })
 
   onCleanup(() => {
-    authListener.subscription.unsubscribe()
+    if (options.autoDispose)
+      authListener.subscription.unsubscribe()
   })
 }
