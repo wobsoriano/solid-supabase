@@ -1,4 +1,8 @@
-# Solid + Supabase
+<p>
+  <img width="100%" src="https://assets.solidjs.com/banner?type=solid-supabase&background=tiles&project=%20" alt="solid-supabase">
+</p>
+
+# solid-supabase
 
 A simple wrapper around Supabase.js to enable usage within Solid.
 
