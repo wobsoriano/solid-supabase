@@ -28,11 +28,11 @@ export function useSupabaseFrom(): SupabaseClient['from'] {
 
 type AuthChangeHandler = (event: AuthChangeEvent, session: AuthSession | null) => void
 
-interface CreateOnAuthStateChangeOptions {
+interface OnAuthStateChangeOptions {
   autoDispose?: boolean
 }
 
-export function useOnAuthStateChange(callback: AuthChangeHandler, options: CreateOnAuthStateChangeOptions = { autoDispose: true }): void {
+export function useOnAuthStateChange(callback: AuthChangeHandler, options: OnAuthStateChangeOptions = { autoDispose: true }): void {
   const client = useSupabase()
 
   const { data: authListener } = client.auth.onAuthStateChange((event, session) => {
