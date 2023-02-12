@@ -42,10 +42,10 @@ This will make the supabase client available anywhere along the component tree.
 
 ```tsx
 import { Match, Switch, createResource, createSignal } from 'solid-js'
-import { createSupabase } from 'solid-supabase'
+import { useSupabase } from 'solid-supabase'
 
 const App = () => {
-  const supabase = createSupabase()
+  const supabase = useSupabase()
 
   const [postId] = createSignal(1)
   const [data, { refetch }] = createResource(postId, (arg) => {
@@ -75,17 +75,17 @@ Other available primitives
 
 ```ts
 import {
-  createOnAuthStateChange,
-  createSupabaseAuth,
-  createSupabaseFrom,
-  createSupabaseStorage,
+  useOnAuthStateChange,
+  useSupabaseAuth,
+  useSupabaseFrom,
+  useSupabaseStorage,
 } from 'solid-supabase'
 
-const auth = createSupabaseAuth() // auth.signOut()
-const storage = createSupabaseStorage() // storage.listBuckets()
-const from = createSupabaseFrom() // from('posts').select('*').eq('id', arg)
+const auth = useSupabaseAuth() // auth.signOut()
+const storage = useSupabaseStorage() // storage.listBuckets()
+const from = useSupabaseFrom() // from('posts').select('*').eq('id', arg)
 
-createOnAuthStateChange((event, session) => {
+useOnAuthStateChange((event, session) => {
   console.log(event, session)
 })
 ```
