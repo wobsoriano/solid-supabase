@@ -2,27 +2,27 @@ import type { AuthChangeEvent, AuthSession, SupabaseClient } from '@supabase/sup
 import { createEffect, onCleanup, useContext } from 'solid-js'
 import { SupabaseContext } from './SupabaseProvider'
 
-export const createSupabase = () => {
+export const useSupabase = () => {
   const ctx = useContext(SupabaseContext)
 
   if (!ctx)
-    throw new Error('createSupabase must be used within a SupabaseContext.Provider')
+    throw new Error('useSupabase must be used within a SupabaseContext.Provider')
 
   return ctx
 }
 
-export function createSupabaseAuth(): SupabaseClient['auth'] {
-  const supabase = createSupabase()
+export function useSupabaseAuth(): SupabaseClient['auth'] {
+  const supabase = useSupabase()
   return supabase.auth
 }
 
-export function createSupabaseStorage(): SupabaseClient['storage'] {
-  const supabase = createSupabase()
+export function useSupabaseStorage(): SupabaseClient['storage'] {
+  const supabase = useSupabase()
   return supabase.storage
 }
 
-export function createSupabaseFrom(): SupabaseClient['from'] {
-  const supabase = createSupabase()
+export function useSupabaseFrom(): SupabaseClient['from'] {
+  const supabase = useSupabase()
   return supabase.from
 }
 
@@ -32,8 +32,8 @@ interface CreateOnAuthStateChangeOptions {
   autoDispose?: boolean
 }
 
-export function createOnAuthStateChange(callback: AuthChangeHandler, options: CreateOnAuthStateChangeOptions = { autoDispose: true }): void {
-  const client = createSupabase()
+export function useOnAuthStateChange(callback: AuthChangeHandler, options: CreateOnAuthStateChangeOptions = { autoDispose: true }): void {
+  const client = useSupabase()
 
   const { data: authListener } = client.auth.onAuthStateChange((event, session) => {
     callback(event, session)
