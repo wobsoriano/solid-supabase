@@ -1,7 +1,7 @@
 {
   "name": "solid-supabase",
   "type": "module",
-  "version": "0.3.3",
+  "version": "0.4.0",
   "description": "A simple wrapper around Supabase.js to enable usage within Solid.",
   "keywords": [
     "solid",
