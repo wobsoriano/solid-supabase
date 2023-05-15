@@ -3,38 +3,39 @@
   "type": "module",
   "version": "0.4.0",
   "description": "A simple wrapper around Supabase.js to enable usage within Solid.",
-  "keywords": [
-    "solid",
-    "supabase"
-  ],
-  "license": "MIT",
   "author": "Robert Soriano <sorianorobertc@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/wobsoriano/solid-supabase#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/wobsoriano/solid-supabase.git"
   },
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "browser": {},
+  "keywords": [
+    "solid",
+    "supabase"
+  ],
   "exports": {
     "solid": {
       "development": "./dist/dev.jsx",
       "import": "./dist/index.jsx"
     },
     "development": {
+      "require": "./dist/dev.cjs",
       "import": {
         "types": "./dist/index.d.ts",
         "default": "./dist/dev.js"
-      },
-      "require": "./dist/dev.cjs"
+      }
     },
+    "require": "./dist/index.cjs",
     "import": {
       "types": "./dist/index.d.ts",
       "default": "./dist/index.js"
-    },
-    "require": "./dist/index.cjs"
+    }
   },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "browser": {},
   "files": [
     "dist"
   ],
@@ -44,9 +45,9 @@
     "prepublishOnly": "pnpm run build",
     "release": "bumpp --commit --push --tag && npm publish",
     "lint": "eslint --ext=js,ts,jsx,tsx .",
-    "lint:fix": "eslint --ext=js,ts,jsx,tsx . --fix"
+    "lint:fix": "eslint --ext=js,ts,jsx,tsx . --fix",
+    "typecheck": "tsc --noEmit"
   },
-  "homepage": "https://github.com/wobsoriano/solid-supabase#readme",
   "peerDependencies": {
     "@supabase/supabase-js": "^2.0.0",
     "solid-js": "^1.6.0"

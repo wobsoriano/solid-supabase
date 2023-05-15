@@ -2,7 +2,7 @@ import type { AuthChangeEvent, AuthSession, SupabaseClient } from '@supabase/sup
 import { createEffect, onCleanup, useContext } from 'solid-js'
 import { SupabaseContext } from './SupabaseProvider'
 
-export const useSupabase = () => {
+export function useSupabase() {
   const ctx = useContext(SupabaseContext)
 
   if (!ctx)
@@ -39,7 +39,7 @@ export function useOnAuthStateChange(callback: AuthChangeHandler, options: OnAut
     callback(event, session)
   })
 
-  createEffect(async() => {
+  createEffect(async () => {
     const { data } = await client.auth.getSession()
     if (data.session)
       callback('SIGNED_IN', data.session)
