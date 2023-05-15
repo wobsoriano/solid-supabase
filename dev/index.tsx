@@ -1,6 +1,13 @@
 import { render } from 'solid-js/web'
-import './styles.css'
+import { createClient } from '@supabase/supabase-js'
+import { SupabaseProvider } from '../src'
 
 import App from './App'
 
-render(() => <App />, document.getElementById('root')!)
+const supabase = createClient(import.meta.env.VITE_SUPABASE_URL, import.meta.env.VITE_SUPABASE_KEY)
+
+render(() => (
+  <SupabaseProvider client={supabase}>
+    <App />
+  </SupabaseProvider>
+), document.getElementById('root')!)
