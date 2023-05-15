@@ -16,14 +16,30 @@
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "browser": {},
   "exports": {
-    "require": "./dist/index.cjs",
-    "import": "./dist/index.js"
+    "solid": {
+      "development": "./dist/dev.jsx",
+      "import": "./dist/index.jsx"
+    },
+    "development": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/dev.js"
+      },
+      "require": "./dist/dev.cjs"
+    },
+    "import": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "require": "./dist/index.cjs"
   },
   "files": [
     "dist"
   ],
   "scripts": {
+    "dev": "vite serve dev",
     "build": "tsup",
     "prepublishOnly": "pnpm run build",
     "release": "bumpp --commit --push --tag && npm publish",
@@ -44,6 +60,9 @@
     "eslint": "^8.40.0",
     "solid-js": "^1.7.5",
     "tsup": "^6.7.0",
-    "typescript": "5.0.4"
+    "tsup-preset-solid": "^0.1.8",
+    "typescript": "5.0.4",
+    "vite": "^4.3.6",
+    "vite-plugin-solid": "^2.7.0"
   }
 }

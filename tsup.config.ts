@@ -1,11 +1,14 @@
-import { defineConfig } from 'tsup'
-import { solidPlugin } from 'esbuild-plugin-solid'
+import { defineConfig } from 'tsup-preset-solid'
 
-export default defineConfig({
-  entry: ['src/index.tsx'],
-  clean: true,
-  format: ['cjs', 'esm'],
-  dts: true,
-  esbuildPlugins: [solidPlugin()],
-  minify: true,
-})
+export default defineConfig(
+  {
+    entry: 'src/index.tsx',
+    devEntry: true,
+  },
+  {
+    // Enable this to write export conditions to package.json
+    // writePackageJson: true,
+    dropConsole: true,
+    cjs: true,
+  },
+)
