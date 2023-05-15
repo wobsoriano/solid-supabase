@@ -5,7 +5,7 @@ import { useSupabase } from '../src'
 const App: Component = () => {
   const supabase = useSupabase()
 
-  const [carId] = createSignal(1)
+  const [carId, setCarId] = createSignal(1)
   const [data, { refetch }] = createResource(carId, (arg) => {
     return supabase.from('cars').select('*').eq('id', arg)
   })
@@ -21,6 +21,7 @@ const App: Component = () => {
       <Match when={data()}>
         <pre>{JSON.stringify(data(), null, 2)}</pre>
         <button onClick={refetch}>Refetch</button>
+        <button onClick={() => setCarId(prev => prev + 1)}>Next</button>
       </Match>
     </Switch>
   )
